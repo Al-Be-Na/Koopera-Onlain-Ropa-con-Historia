@@ -1,2 +1,3 @@
 # Koopera-Onlain-Ropa-con-Historia
-ropa nueva y de segunda mano, tienda de ropa online, ropa vintage, tienda de ropa usada, ropa segunda mano online,  moda sostenible, ropa barata online, últimas tendencias en ropa
+Ropa nueva, usada y vintage en perfecto estado. Precios bajos y envío rápido. Viste con estilo y cuida el planeta. Últimas tendencias en ropa
+¡Visítanos ahora!
