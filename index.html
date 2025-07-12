@@ -1,1 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título SEO de la página -->
+    <title>Tienda de Ropa: Nueva, Vintage y de Segunda Mano (Online)| Moda Sostenible y Consciente (Envios Rápidos)</title>
+    
+    <!-- Meta Keywords para SEO: crucial para la relevancia de búsqueda -->
+    <meta name="keywords" content="ropa nueva y de segunda mano, tienda de ropa online, ropa vintage, tienda de ropa usada, ropa segunda mano online, moda sostenible, ropa barata online, últimas tendencias en ropa">
+    
+    <!-- Meta Description para SEO: el snippet que aparece en los resultados de búsqueda -->
+    <meta name="description" content="Ropa nueva, usada y vintage en perfecto estado. Precios bajos y envío rápido. Viste con estilo y cuida el planeta. ¡Visítanos ahora!">
+    
+    <!-- Open Graph Meta Tags para compartir en redes sociales (Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="Tienda de Ropa: Nueva, Vintage y de Segunda Mano (Online)| Moda Sostenible y Consciente (Envios Rápidos)">
+    <meta property="og:description" content="Ropa nueva, usada y vintage en perfecto estado. Precios bajos y envío rápido. Viste con estilo y cuida el planeta. ¡Visítanos ahora!">
+    <meta property="og:url" content="URL_DE_TU_PAGINA_EN_GITHUB_PAGES"> <!-- ¡IMPORTANTE! Reemplaza esto con la URL real de tu GitHub Pages -->
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:image" content="URL_DE_UNA_IMAGEN_DESTACADA_PARA_COMPARTIR">  Descomenta y añade la URL de una imagen representativa para cuando se comparta el enlace -->
 
+    <!-- Favicon (icono de la pestaña del navegador) - Opcional pero recomendado -->
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+
+    <!-- Enlace a Tailwind CSS CDN para estilos rápidos y responsivos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Fuentes personalizadas para una mejor estética */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Estilos adicionales si fueran necesarios, aunque Tailwind cubre la mayoría */
+        .header-bg {
+            background-image: url('https://placehold.co/1200x400/A8DADC/1D3557?text=Tu+Banner+Principal'); /* Placeholder para el banner principal */
+            background-size: cover;
+            background-position: center;
+        }
+        .product-card {
+            transition: transform 0.2s ease-in-out;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 antialiased">
+
+    <!-- Sección del Encabezado (simulando la barra superior y banner de Shein) -->
+    <header class="bg-white shadow-md py-4 px-6 md:px-12 sticky top-0 z-50 rounded-b-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo o Nombre de la Tienda -->
+            <a href="#" class="text-2xl font-bold text-indigo-700 rounded-md p-2 hover:bg-indigo-50 transition duration-300">
+                TuTiendaOnline
+            </a>
+            
+            <!-- Barra de Navegación (Placeholder) -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2">Novedades</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2">Mujer</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2">Hombre</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2">Vintage</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2">Segunda Mano</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2">Sostenible</a>
+            </nav>
+
+            <!-- Iconos de Usuario/Carrito (Placeholder) -->
+            <div class="flex items-center space-x-4">
+                <button class="text-gray-600 hover:text-indigo-700 transition duration-300 focus:outline-none">
+                    <!-- Icono de búsqueda (ej. SVG o Lucide React si fuera React) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </button>
+                <button class="text-gray-600 hover:text-indigo-700 transition duration-300 focus:outline-none">
+                    <!-- Icono de usuario -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </button>
+                <button class="text-gray-600 hover:text-indigo-700 transition duration-300 focus:outline-none">
+                    <!-- Icono de carrito -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                </button>
+            </div>
+            <!-- Menú hamburguesa para móviles -->
+            <button class="md:hidden text-gray-600 hover:text-indigo-700 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sección del Banner Principal / Hero Section -->
+    <section class="header-bg py-20 md:py-32 text-white text-center rounded-b-lg mb-8">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                Descubre Moda Consciente y Única
+            </h1>
+            <p class="text-lg md:text-xl mb-8 drop-shadow-md">
+                Ropa nueva, usada y vintage en perfecto estado. Precios bajos y envío rápido. Viste con estilo y cuida el planeta.
+            </p>
+            <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105">
+                ¡Explora Nuestra Colección Ahora!
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección de Slogan y Hashtags -->
+    <section class="max-w-7xl mx-auto px-6 py-8 text-center bg-white shadow-md rounded-lg mb-8">
+        <p class="text-2xl md:text-3xl font-semibold text-gray-700 mb-4">
+            👗 Ropa que cuenta historias. Tú las continúas, conscientemente.
+        </p>
+        <div class="text-sm text-gray-500 flex flex-wrap justify-center gap-2">
+            <span class="bg-gray-200 rounded-full px-3 py-1">#RopaNueva</span>
+            <span class="bg-gray-200 rounded-full px-3 py-1">#RopaSegundaMano</span>
+            <span class="bg-gray-200 rounded-full px-3 py-1">#ModaSostenible</span>
+            <span class="bg-gray-200 rounded-full px-3 py-1">#RopaVintage</span>
+            <span class="bg-gray-200 rounded-full px-3 py-1">#EconomíaCircular</span>
+            <span class="bg-gray-200 rounded-full px-3 py-1">#ModaConsciente</span>
+            <span class="bg-gray-200 rounded-full px-3 py-1">#TiendaOnline</span>
+            <span class="bg-gray-200 rounded-full px-3 py-1">#RopaBarata</span>
+            <span class="bg-gray-200 rounded-full px-3 py-1">#SlowFashion</span>
+            <span class="bg-gray-200 rounded-full px-3 py-1">#CompraConsciente</span>
+        </div>
+    </section>
+
+    <!-- Sección de Destacados / Categorías (simulando la cuadrícula de productos de Shein) -->
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Nuestras Colecciones Destacadas</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Tarjeta de Producto/Categoría 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <img src="https://placehold.co/600x400/FFD1DC/333333?text=Ropa+Nueva" alt="Ropa Nueva" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Novedades</h3>
+                    <p class="text-gray-600 text-sm mb-4">Descubre las últimas tendencias en ropa nueva.</p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Ver Novedades &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Producto/Categoría 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <img src="https://placehold.co/600x400/B0E0E6/333333?text=Ropa+Vintage" alt="Ropa Vintage" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Estilo Vintage</h3>
+                    <p class="text-gray-600 text-sm mb-4">Encuentra piezas únicas con historia y encanto.</p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Explorar Vintage &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Producto/Categoría 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <img src="https://placehold.co/600x400/C8E6C9/333333?text=Segunda+Mano" alt="Ropa de Segunda Mano" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Segunda Mano</h3>
+                    <p class="text-gray-600 text-sm mb-4">Moda consciente y asequible en perfecto estado.</p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Comprar Segunda Mano &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Producto/Categoría 4 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <img src="https://placehold.co/600x400/F0E68C/333333?text=Moda+Sostenible" alt="Moda Sostenible" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Moda Sostenible</h3>
+                    <p class="text-gray-600 text-sm mb-4">Prendas que respetan el planeta y tu estilo.</p>
+                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Ver Opciones Sostenibles &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios o Beneficios (simulando una sección de confianza) -->
+    <section class="bg-indigo-700 text-white py-12 rounded-lg mx-auto max-w-7xl px-6 mb-8">
+        <h2 class="text-3xl font-bold text-center mb-8">¿Por qué elegirnos?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="p-4">
+                <h3 class="text-xl font-semibold mb-2">Calidad Garantizada</h3>
+                <p class="text-indigo-200">Seleccionamos cada prenda para asegurar su excelente estado.</p>
+            </div>
+            <div class="p-4">
+                <h3 class="text-xl font-semibold mb-2">Envíos Rápidos</h3>
+                <p class="text-indigo-200">Recibe tus compras en tiempo récord, directamente en tu puerta.</p>
+            </div>
+            <div class="p-4">
+                <h3 class="text-xl font-semibold mb-2">Impacto Positivo</h3>
+                <p class="text-indigo-200">Contribuye a la economía circular y a un futuro más verde.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de Página (Footer) -->
+    <footer class="bg-gray-800 text-gray-300 py-8 px-6 md:px-12 rounded-t-lg">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Columna 1: Información de la Tienda -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">TuTiendaOnline</h3>
+                <p class="text-sm">
+                    Moda consciente y accesible para todos. Descubre ropa nueva, vintage y de segunda mano con estilo y propósito.
+                </p>
+            </div>
+            <!-- Columna 2: Enlaces Rápidos -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Enlaces Rápidos</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition duration-300">Sobre Nosotros</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Preguntas Frecuentes</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Política de Envíos</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Política de Devoluciones</a></li>
+                </ul>
+            </div>
+            <!-- Columna 3: Contacto y Redes Sociales -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Contacto</h3>
+                <p class="text-sm">Email: info@tutiendaonline.com</p>
+                <p class="text-sm">Teléfono: +34 123 456 789</p>
+                <div class="flex space-x-4 mt-4">
+                    <!-- Iconos de Redes Sociales (Placeholders) -->
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.7 5 4.9 9 5.1 0-.4.1-.7.1-1 0-2.4 2.4-4.3 5.1-4.3 1.3 0 2.6.5 3.5 1.3 1.1-.2 2.1-.6 3-1.2C22 4.5 22.7 3.7 22 4z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-sm text-gray-500 mt-8">
+            &copy; 2025 TuTiendaOnline. Todos los derechos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
