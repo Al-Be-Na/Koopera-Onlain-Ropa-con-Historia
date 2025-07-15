@@ -42,60 +42,101 @@
         .product-card:hover {
             transform: translateY(-5px);
         }
+        .category-block {
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 250px; /* Altura fija para los bloques de categoría */
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .category-block:hover {
+            transform: scale(1.03);
+        }
+        .category-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Overlay oscuro para el texto */
+            border-radius: 8px;
+        }
+        .category-block h3 {
+            position: relative;
+            z-index: 10;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800 antialiased">
 
     <!-- Sección del Encabezado (simulando la barra superior y banner de Shein) -->
     <header class="bg-white shadow-md py-4 px-6 md:px-12 sticky top-0 z-50 rounded-b-lg">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <!-- Logo o Nombre de la Tienda -->
-            <a href="#" class="text-2xl font-bold text-indigo-700 rounded-md p-2 hover:bg-indigo-50 transition duration-300">
-                Koopera Onlain Vintage & Nuevo
-            </a>
-            
-            <!-- Barra de Navegación (Placeholder) -->
-            <nav class="hidden md:flex space-x-6">
-                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2">Novedades</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2">Mujer</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2">Hombre</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2">Vintage</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2">Segunda Mano</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2">Sostenible</a>
-            </nav>
-
-            <!-- Iconos de Usuario/Carrito (Placeholder) -->
-            <div class="flex items-center space-x-4">
-                <button class="text-gray-600 hover:text-indigo-700 transition duration-300 focus:outline-none">
-                    <!-- Icono de búsqueda (ej. SVG o Lucide React si fuera React) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                </button>
-                <button class="text-gray-600 hover:text-indigo-700 transition duration-300 focus:outline-none">
-                    <!-- Icono de usuario -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                </button>
-                <button class="text-gray-600 hover:text-indigo-700 transition duration-300 focus:outline-none">
-                    <!-- Icono de carrito -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
+            <!-- Fila Superior: Logo y Iconos -->
+            <div class="flex justify-between items-center w-full mb-4">
+                <!-- Logo o Nombre de la Tienda -->
+                <a href="#" class="text-2xl font-bold text-indigo-700 rounded-md p-2 hover:bg-indigo-50 transition duration-300">
+                    Koopera Onlain Vintage & Nuevo
+                </a>
+                
+                <!-- Iconos (siempre visibles, ajustar según necesidad para móvil/escritorio) -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-600 hover:text-indigo-700 transition duration-300 focus:outline-none">
+                        <!-- Icono de búsqueda -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    </button>
+                    <button class="text-gray-600 hover:text-indigo-700 transition duration-300 focus:outline-none">
+                        <!-- Icono de usuario -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </button>
+                    <button class="text-gray-600 hover:text-indigo-700 transition duration-300 focus:outline-none">
+                        <!-- Icono de carrito -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                    </button>
+                </div>
+                <!-- Botón de Menú para Móviles (si se implementa un menú colapsable) -->
+                <button class="md:hidden text-gray-600 hover:text-indigo-700 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
                 </button>
             </div>
-            <!-- Menú hamburguesa para móviles -->
-            <button class="md:hidden text-gray-600 hover:text-indigo-700 focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-            </button>
+
+            <!-- Fila Inferior: Barra de Navegación (ahora debajo del logo) -->
+            <nav class="w-full flex justify-center space-x-6 overflow-x-auto pb-2"> <!-- Añadido overflow-x-auto para pantallas pequeñas -->
+                <a href="#inicio" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2 whitespace-nowrap">Inicio</a>
+                <a href="#novedades" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2 whitespace-nowrap">Novedades</a>
+                <a href="#ofertas" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2 whitespace-nowrap">Ofertas</a>
+                <a href="#categorias" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2 whitespace-nowrap">Categorías</a>
+                <a href="#mujer" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2 whitespace-nowrap">Mujer</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2 whitespace-nowrap">Hombre</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2 whitespace-nowrap">Vintage</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2 whitespace-nowrap">Segunda Mano</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 rounded-md px-3 py-2 whitespace-nowrap">Sostenible</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Sección del Banner Principal / Hero Section -->
-    <section class="header-bg py-20 md:py-32 text-white text-center rounded-b-lg mb-8">
+    <!-- Sección del Banner Principal / Hero Section (Representa el "Inicio") -->
+    <section id="inicio" class="header-bg py-20 md:py-32 text-white text-center rounded-b-lg mb-8">
         <div class="max-w-4xl mx-auto px-6">
             <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 drop-shadow-lg">
                 Descubre Moda Consciente y Única
             </h1>
             <p class="text-lg md:text-xl mb-8 drop-shadow-md">
-                Ropa nueva, usada y vintage en perfecto estado. Precios bajos y envío rápido. Viste con estilo y cuida el planeta.
+                Ropa nueva, usada y vintage en perfecto estado. Precios bajos y <strong class="text-yellow-300">envío rápido</strong>. Viste con estilo y cuida el planeta.
             </p>
-            <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105">
+            <a href="#novedades" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105">
                 ¡Explora Nuestra Colección Ahora!
             </a>
         </div>
@@ -120,47 +161,154 @@
         </div>
     </section>
 
-    <!-- Sección de Destacados / Categorías (simulando la cuadrícula de productos de Shein) -->
-    <section class="max-w-7xl mx-auto px-6 py-12">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Nuestras Colecciones Destacadas</h2>
+    <!-- Sección de Categorías con Bloques -->
+    <section id="categorias" class="max-w-7xl mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Explora Nuestras Categorías</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Bloque de Categoría: Ropa de Mujer -->
+            <a href="#" class="category-block" style="background-image: url('https://placehold.co/600x400/FFC0CB/333333?text=Ropa+de+Mujer');" id="mujer">
+                <h3>Ropa de Mujer</h3>
+            </a>
+            <!-- Bloque de Categoría: Ropa de Hombre -->
+            <a href="#" class="category-block" style="background-image: url('https://placehold.co/600x400/87CEEB/333333?text=Ropa+de+Hombre');">
+                <h3>Ropa de Hombre</h3>
+            </a>
+            <!-- Bloque de Categoría: Ropa Vintage -->
+            <a href="#" class="category-block" style="background-image: url('https://placehold.co/600x400/DAA520/333333?text=Ropa+Vintage');">
+                <h3>Ropa Vintage</h3>
+            </a>
+            <!-- Bloque de Categoría: Segunda Mano -->
+            <a href="#" class="category-block" style="background-image: url('https://placehold.co/600x400/90EE90/333333?text=Segunda+Mano');">
+                <h3>Segunda Mano</h3>
+            </a>
+            <!-- Bloque de Categoría: Accesorios -->
+            <a href="#" class="category-block" style="background-image: url('https://placehold.co/600x400/D3D3D3/333333?text=Accesorios');">
+                <h3>Accesorios</h3>
+            </a>
+            <!-- Bloque de Categoría: Moda Sostenible -->
+            <a href="#" class="category-block" style="background-image: url('https://placehold.co/600x400/ADD8E6/333333?text=Moda+Sostenible');">
+                <h3>Moda Sostenible</h3>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección de Novedades -->
+    <section id="novedades" class="max-w-7xl mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Novedades: Lo Último en Moda Consciente</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            <!-- Tarjeta de Producto/Categoría 1 -->
+            <!-- Producto Novedad 1 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
-                <img src="https://placehold.co/600x400/FFD1DC/333333?text=Ropa+Nueva" alt="Ropa Nueva" class="w-full h-64 object-cover">
+                <img src="https://placehold.co/600x400/98FB98/333333?text=Vestido+Floral" alt="Vestido Floral Nuevo" class="w-full h-64 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Novedades</h3>
-                    <p class="text-gray-600 text-sm mb-4">Descubre las últimas tendencias en ropa nueva.</p>
-                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Ver Novedades &rarr;</a>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Vestido Floral de Verano</h3>
+                    <p class="text-gray-600 text-sm mb-4">Un diseño fresco y sostenible para tus días más soleados.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-bold text-indigo-700">€39.99</span>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Ver Producto &rarr;</a>
+                    </div>
                 </div>
             </div>
-
-            <!-- Tarjeta de Producto/Categoría 2 -->
+            <!-- Producto Novedad 2 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
-                <img src="https://placehold.co/600x400/B0E0E6/333333?text=Ropa+Vintage" alt="Ropa Vintage" class="w-full h-64 object-cover">
+                <img src="https://placehold.co/600x400/ADD8E6/333333?text=Jeans+Eco" alt="Jeans Ecológicos" class="w-full h-64 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Estilo Vintage</h3>
-                    <p class="text-gray-600 text-sm mb-4">Encuentra piezas únicas con historia y encanto.</p>
-                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Explorar Vintage &rarr;</a>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Jeans Ajustados Ecológicos</h3>
+                    <p class="text-gray-600 text-sm mb-4">Comodidad y estilo con materiales reciclados.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-bold text-indigo-700">€49.99</span>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Ver Producto &rarr;</a>
+                    </div>
                 </div>
             </div>
-
-            <!-- Tarjeta de Producto/Categoría 3 -->
+            <!-- Producto Novedad 3 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
-                <img src="https://placehold.co/600x400/C8E6C9/333333?text=Segunda+Mano" alt="Ropa de Segunda Mano" class="w-full h-64 object-cover">
+                <img src="https://placehold.co/600x400/FFB6C1/333333?text=Blusa+Lino" alt="Blusa de Lino" class="w-full h-64 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Segunda Mano</h3>
-                    <p class="text-gray-600 text-sm mb-4">Moda consciente y asequible en perfecto estado.</p>
-                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Comprar Segunda Mano &rarr;</a>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Blusa de Lino Transpirable</h3>
+                    <p class="text-gray-600 text-sm mb-4">Perfecta para cualquier ocasión, ligera y natural.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-bold text-indigo-700">€29.99</span>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Ver Producto &rarr;</a>
+                    </div>
                 </div>
             </div>
-
-            <!-- Tarjeta de Producto/Categoría 4 -->
+            <!-- Producto Novedad 4 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
-                <img src="https://placehold.co/600x400/F0E68C/333333?text=Moda+Sostenible" alt="Moda Sostenible" class="w-full h-64 object-cover">
+                <img src="https://placehold.co/600x400/DDA0DD/333333?text=Sudadera+Reciclada" alt="Sudadera Reciclada" class="w-full h-64 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Moda Sostenible</h3>
-                    <p class="text-gray-600 text-sm mb-4">Prendas que respetan el planeta y tu estilo.</p>
-                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Ver Opciones Sostenibles &rarr;</a>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Sudadera con Capucha Reciclada</h3>
+                    <p class="text-gray-600 text-sm mb-4">Comodidad y conciencia en una sola prenda.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-bold text-indigo-700">€45.00</span>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Ver Producto &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Ofertas -->
+    <section id="ofertas" class="max-w-7xl mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Grandes Ofertas: ¡No te las Pierdas!</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Producto Oferta 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <img src="https://placehold.co/600x400/FF6347/333333?text=Oferta+Vestido" alt="Vestido en Oferta" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Vestido Midi Estampado</h3>
+                    <p class="text-gray-600 text-sm mb-4">Un clásico renovado con un descuento increíble.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-lg font-bold text-red-600">€24.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">€49.99</span>
+                        </div>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Ver Oferta &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto Oferta 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <img src="https://placehold.co/600x400/9370DB/333333?text=Oferta+Camisa" alt="Camisa en Oferta" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Camisa de Algodón Orgánico</h3>
+                    <p class="text-gray-600 text-sm mb-4">Suavidad y conciencia a un precio inigualable.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-lg font-bold text-red-600">€19.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">€35.00</span>
+                        </div>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Ver Oferta &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto Oferta 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <img src="https://placehold.co/600x400/FFD700/333333?text=Oferta+Falda" alt="Falda en Oferta" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Falda Vaquera Vintage</h3>
+                    <p class="text-gray-600 text-sm mb-4">Un toque retro con un descuento especial.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-lg font-bold text-red-600">€22.50</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">€40.00</span>
+                        </div>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Ver Oferta &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto Oferta 4 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <img src="https://placehold.co/600x400/F0F8FF/333333?text=Oferta+Chaqueta" alt="Chaqueta en Oferta" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Chaqueta Ligera Reciclada</h3>
+                    <p class="text-gray-600 text-sm mb-4">Ideal para entretiempo, ahora a un precio reducido.</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-lg font-bold text-red-600">€59.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">€90.00</span>
+                        </div>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Ver Oferta &rarr;</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -190,7 +338,7 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Columna 1: Información de la Tienda -->
             <div>
-                <h3 class="text-lg font-semibold text-white mb-4">TuTiendaOnline</h3>
+                <h3 class="text-lg font-semibold text-white mb-4">Koopera Onlain Vintage & Nuevo</h3>
                 <p class="text-sm">
                     Moda consciente y accesible para todos. Descubre ropa nueva, vintage y de segunda mano con estilo y propósito.
                 </p>
@@ -231,3 +379,4 @@
 
 </body>
 </html>
+
